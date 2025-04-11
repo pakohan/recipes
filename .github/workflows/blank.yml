@@ -1,10 +1,10 @@
 name: Generate ePUB
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pakohan/cooklang-epub@022ae0e703d7e6a3f064b1b44a85a2089958edfc
+      - uses: pakohan/cooklang-epub@db0657c9105c1ea051f9f0ad483b99a47593d478
