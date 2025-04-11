@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pakohan/cooklang-epub@8af5f4547494f2273450a37a41d6fc3bf5e92f9a
+      - uses: pakohan/cooklang-epub@09c8962aa171d4ee76beffcec6c71a3db17b8dba
