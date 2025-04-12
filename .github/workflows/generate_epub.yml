@@ -1,22 +1,30 @@
 name: Generate ePUB
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - main
 permissions:
   contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Checkout template
+        uses: actions/checkout@v4
         with:
           repository: "pakohan/cooklang-epub-template"
           path: "templates"
-      - uses: pakohan/cooklang-epub@v1.0.0
-      - name: upload epub
+      - name: Generate ePUB
+        uses: pakohan/cooklang-epub@v1.0.0
+      - name: Delete previous book
+        uses: liudonghua123/delete-release-action@v1
+        with:
+          release_name: "book"
+      - name: Upload new ePUB
         uses: softprops/action-gh-release@v2
         id: create_release
         with:
+          tag_name: "book"
           files: ./recipes.epub
