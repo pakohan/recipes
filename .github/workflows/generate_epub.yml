@@ -24,6 +24,8 @@ jobs:
           release-drop: true
           release-keep-count: 0
           release-drop-tag: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - name: Upload new ePUB
         uses: softprops/action-gh-release@v2
         id: create_release
