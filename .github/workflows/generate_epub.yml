@@ -29,5 +29,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         id: create_release
         with:
-          tag_name: "book"
+          tag_name: "1"
           files: ./recipes.epub
