@@ -19,10 +19,11 @@ jobs:
       - name: Generate ePUB
         uses: pakohan/cooklang-epub@v1.0.0
       - name: Delete previous book
-        uses: liudonghua123/delete-release-action@v1
+        uses: sgpublic/delete-release-action@v1.2
         with:
-          release_name: "book"
-          suppress_errors: true
+          release-drop: true
+          release-keep-count: 0
+          release-drop-tag: true
       - name: Upload new ePUB
         uses: softprops/action-gh-release@v2
         id: create_release
