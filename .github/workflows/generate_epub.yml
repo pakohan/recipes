@@ -17,7 +17,7 @@ jobs:
           repository: "pakohan/cooklang-epub-template"
           path: "templates"
       - name: Generate ePUB
-        uses: pakohan/cooklang-epub@v1.0.0
+        uses: pakohan/cooklang-epub@v3.0.0
       - name: Delete previous book
         uses: Nats-ji/delete-old-releases@v1
         with:
@@ -40,6 +40,6 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: Github Actions job result
-          to: patrick.kohan@pbsync.com
+          to: ${{ secrets.EMAIL_ADDRESS }}
           from: Patrick Kohan
           attachments: ./recipes.epub
